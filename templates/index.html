@@ -19,7 +19,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
@@ -49,11 +49,14 @@
             color: #4A2C1A;
             margin-bottom: 15px;
             font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .kahveci-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
@@ -107,7 +110,7 @@
 
         .tercih-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 15px;
             margin-bottom: 30px;
         }
@@ -149,6 +152,62 @@
             opacity: 0.8;
         }
 
+        .alerjen-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .alerjen-item {
+            background: #FFF5F5;
+            border: 2px solid #FFB3B3;
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .alerjen-item:hover {
+            background: #FFEBEB;
+            border-color: #FF8080;
+        }
+
+        .alerjen-item.selected {
+            background: #FF6B6B;
+            color: white;
+            border-color: #FF4444;
+        }
+
+        .kahve-turu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .kahve-turu-item {
+            background: #E8F4FD;
+            border: 2px solid #B3D9FF;
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .kahve-turu-item:hover {
+            background: #D1ECFF;
+            border-color: #80BFFF;
+        }
+
+        .kahve-turu-item.selected {
+            background: #4A90E2;
+            color: white;
+            border-color: #357ABD;
+        }
+
         .btn-container {
             text-align: center;
             margin: 30px 0;
@@ -165,7 +224,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
-            margin: 0 10px;
+            margin: 0 10px 10px 10px;
         }
 
         .btn:hover {
@@ -184,50 +243,102 @@
             background: linear-gradient(45deg, #6B4423, #8B4513);
         }
 
-        .sonuc {
-            background: linear-gradient(135deg, #F5F5DC, #DEB887);
-            border-radius: 15px;
-            padding: 30px;
+        .btn-reset {
+            background: linear-gradient(45deg, #666, #888);
+        }
+
+        .oneriler-container {
             margin-top: 30px;
-            border: 3px solid #D2B48C;
             display: none;
         }
 
-        .sonuc.show {
+        .oneriler-container.show {
             display: block;
             animation: fadeIn 0.5s ease-in;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .oneriler-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .oneriler-header h2 {
+            color: #4A2C1A;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .oneriler-alt-baslik {
+            color: #8B4513;
+            font-size: 1.1em;
+        }
+
+        .oneriler-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .oneri-card {
+            background: linear-gradient(135deg, #F5F5DC, #DEB887);
+            border-radius: 15px;
+            padding: 25px;
+            border: 3px solid #D2B48C;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oneri-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(139, 69, 19, 0.3);
+            border-color: #8B4513;
+        }
+
+        .oneri-rank {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #8B4513;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
         }
 
         .kahve-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
+            align-items: flex-start;
+            margin-bottom: 15px;
             flex-wrap: wrap;
         }
 
         .kahve-isim {
-            font-size: 1.8em;
+            font-size: 1.5em;
             color: #4A2C1A;
             font-weight: bold;
+            margin-right: 10px;
         }
 
         .kahve-fiyat {
-            font-size: 1.4em;
+            font-size: 1.3em;
             color: #8B4513;
             font-weight: bold;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 5px 15px;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px 12px;
+            border-radius: 15px;
+            white-space: nowrap;
         }
 
         .kahve-aciklama {
-            font-size: 1.1em;
+            font-size: 1em;
             color: #8B4513;
             margin-bottom: 15px;
             line-height: 1.6;
@@ -235,14 +346,14 @@
 
         .kahve-details {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
         }
 
         .detail-item {
             background: rgba(139, 69, 19, 0.1);
-            padding: 10px;
+            padding: 8px;
             border-radius: 8px;
             border: 1px solid rgba(139, 69, 19, 0.2);
         }
@@ -250,11 +361,24 @@
         .detail-label {
             font-weight: bold;
             color: #4A2C1A;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
+            font-size: 0.9em;
         }
 
         .detail-value {
             color: #8B4513;
+            font-size: 0.9em;
+        }
+
+        .uyum-badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
 
         .hata {
@@ -272,6 +396,7 @@
             color: #8B4513;
             font-style: italic;
             display: none;
+            padding: 20px;
         }
 
         .coffee-icon {
@@ -281,7 +406,7 @@
         }
 
         .menu-container {
-            max-height: 400px;
+            max-height: 500px;
             overflow-y: auto;
             background: rgba(255, 255, 255, 0.5);
             border-radius: 10px;
@@ -315,91 +440,200 @@
             font-size: 0.9em;
             line-height: 1.4;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #8B4513;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="coffee-icon">☕</div>
         <h1>Kahveci Önerisi Sistemi</h1>
-        <p class="subtitle">Favori kahvecinizden size özel öneri alın!</p>
+        <p class="subtitle">Size özel kahve önerilerini keşfedin! ☕✨</p>
 
         <div class="section">
-            <h2>Kahveci Seçin:</h2>
+            <h2>🏪 Kahveci Seçin:</h2>
             <div class="kahveci-grid" id="kahveci-grid">
                 <!-- Kahveciler dinamik olarak yüklenecek -->
             </div>
         </div>
 
         <div class="section">
-            <h2>Kahve tercihlerinizi seçin:</h2>
+            <h2>☕ Kahve Türü Tercihiniz:</h2>
+            <div class="kahve-turu-grid">
+                <div class="kahve-turu-item" onclick="toggleKahveTuru('espresso')">
+                    <input type="radio" name="kahve-turu" id="espresso" value="espresso">
+                    <span>☕ Espresso</span>
+                    <div class="aciklama">Yoğun ve güçlü</div>
+                </div>
+                <div class="kahve-turu-item" onclick="toggleKahveTuru('latte')">
+                    <input type="radio" name="kahve-turu" id="latte" value="latte">
+                    <span>🥛 Latte</span>
+                    <div class="aciklama">Sütlü ve kremsi</div>
+                </div>
+                <div class="kahve-turu-item" onclick="toggleKahveTuru('cappuccino')">
+                    <input type="radio" name="kahve-turu" id="cappuccino" value="cappuccino">
+                    <span>☁️ Cappuccino</span>
+                    <div class="aciklama">Köpüklü ve dengeli</div>
+                </div>
+                <div class="kahve-turu-item" onclick="toggleKahveTuru('americano')">
+                    <input type="radio" name="kahve-turu" id="americano" value="americano">
+                    <span>💧 Americano</span>
+                    <div class="aciklama">Hafif ve sade</div>
+                </div>
+                <div class="kahve-turu-item" onclick="toggleKahveTuru('mocha')">
+                    <input type="radio" name="kahve-turu" id="mocha" value="mocha">
+                    <span>🍫 Mocha</span>
+                    <div class="aciklama">Çikolatalı</div>
+                </div>
+                <div class="kahve-turu-item" onclick="toggleKahveTuru('filter')">
+                    <input type="radio" name="kahve-turu" id="filter" value="filter">
+                    <span>🔍 Filtre</span>
+                    <div class="aciklama">Geleneksel</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>✨ Kahve Tercihleriniz:</h2>
             <div class="tercih-grid">
                 <div class="tercih-item" onclick="toggleTercih('guclu')">
                     <input type="checkbox" id="guclu" value="guclu">
                     <span>🔥 Güçlü</span>
-                    <div class="aciklama">Yoğun ve sert kahveler</div>
+                    <div class="aciklama">Yoğun ve sert</div>
                 </div>
                 <div class="tercih-item" onclick="toggleTercih('hafif')">
                     <input type="checkbox" id="hafif" value="hafif">
                     <span>🌸 Hafif</span>
-                    <div class="aciklama">Yumuşak ve nazik tatlar</div>
+                    <div class="aciklama">Yumuşak ve nazik</div>
                 </div>
                 <div class="tercih-item" onclick="toggleTercih('sicak')">
                     <input type="checkbox" id="sicak" value="sicak">
                     <span>🔥 Sıcak</span>
-                    <div class="aciklama">Geleneksel sıcak kahveler</div>
+                    <div class="aciklama">Geleneksel sıcak</div>
                 </div>
                 <div class="tercih-item" onclick="toggleTercih('soguk')">
                     <input type="checkbox" id="soguk" value="soguk">
                     <span>🧊 Soğuk</span>
-                    <div class="aciklama">Serinletici soğuk kahveler</div>
+                    <div class="aciklama">Serinletici</div>
                 </div>
                 <div class="tercih-item" onclick="toggleTercih('tatli')">
                     <input type="checkbox" id="tatli" value="tatli">
                     <span>🍫 Tatlı</span>
-                    <div class="aciklama">Aromalı ve tatlı kahveler</div>
+                    <div class="aciklama">Aromalı ve tatlı</div>
                 </div>
                 <div class="tercih-item" onclick="toggleTercih('sade')">
                     <input type="checkbox" id="sade" value="sade">
                     <span>☕ Sade</span>
                     <div class="aciklama">Doğal kahve tadı</div>
                 </div>
+                <div class="tercih-item" onclick="toggleTercih('organik')">
+                    <input type="checkbox" id="organik" value="organik">
+                    <span>🌱 Organik</span>
+                    <div class="aciklama">Doğal ve saf</div>
+                </div>
+                <div class="tercih-item" onclick="toggleTercih('kafeinsiz')">
+                    <input type="checkbox" id="kafeinsiz" value="kafeinsiz">
+                    <span>😴 Kafeinsiz</span>
+                    <div class="aciklama">Kafein hassasiyeti</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>⚠️ Alerjen Bilgileri (Varsa):</h2>
+            <div class="alerjen-grid">
+                <div class="alerjen-item" onclick="toggleAlerjen('sut')">
+                    <input type="checkbox" id="sut" value="sut">
+                    <span>🥛 Süt Alerjisi</span>
+                    <div class="aciklama">Laktoz intoleransı</div>
+                </div>
+                <div class="alerjen-item" onclick="toggleAlerjen('gluten')">
+                    <input type="checkbox" id="gluten" value="gluten">
+                    <span>🌾 Gluten Alerjisi</span>
+                    <div class="aciklama">Çölyak hastalığı</div>
+                </div>
+                <div class="alerjen-item" onclick="toggleAlerjen('findik')">
+                    <input type="checkbox" id="findik" value="findik">
+                    <span>🥜 Fındık Alerjisi</span>
+                    <div class="aciklama">Kuruyemiş alerjisi</div>
+                </div>
+                <div class="alerjen-item" onclick="toggleAlerjen('soya')">
+                    <input type="checkbox" id="soya" value="soya">
+                    <span>🌱 Soya Alerjisi</span>
+                    <div class="aciklama">Soya ürünleri</div>
+                </div>
+                <div class="alerjen-item" onclick="toggleAlerjen('yumurta')">
+                    <input type="checkbox" id="yumurta" value="yumurta">
+                    <span>🥚 Yumurta Alerjisi</span>
+                    <div class="aciklama">Yumurta ürünleri</div>
+                </div>
             </div>
         </div>
 
         <div class="btn-container">
             <button class="btn" onclick="kahveOnerisiAl()">
-                Kahve Önerisi Al ☕
+                <span class="loading-spinner" style="display: none;"></span>
+                Kahve Önerilerini Al ☕
             </button>
             <button class="btn btn-secondary" onclick="menuGoster()">
                 Tam Menüyü Gör 📋
             </button>
+            <button class="btn btn-reset" onclick="formuSifirla()">
+                Formu Sıfırla 🔄
+            </button>
         </div>
 
         <div class="loading">
-            Kahve öneriniz hazırlanıyor... ☕
+            <div class="loading-spinner"></div>
+            Sizin için en iyi kahve önerilerini hazırlıyoruz... Bu birkaç saniye sürebilir ☕
         </div>
 
         <div class="hata" id="hata-mesaji">
         </div>
 
-        <div class="sonuc" id="sonuc">
-            <div class="kahve-header">
-                <div class="kahve-isim" id="kahve-isim"></div>
-                <div class="kahve-fiyat" id="kahve-fiyat"></div>
+        <div class="oneriler-container" id="oneriler-container">
+            <div class="oneriler-header">
+                <h2>🎯 Size Özel Kahve Önerileri</h2>
+                <p class="oneriler-alt-baslik">Tercihlerinize göre en uygun seçenekler</p>
             </div>
-            <div class="kahve-aciklama" id="kahve-aciklama"></div>
-            <div class="kahve-details" id="kahve-details">
+            <div class="oneriler-grid" id="oneriler-grid">
+                <!-- Öneriler dinamik olarak yüklenecek -->
             </div>
         </div>
 
         <div class="menu-container" id="menu-container">
-            <h3>Tam Menü</h3>
+            <h3>📋 Tam Menü - <span id="menu-kahveci-adi"></span></h3>
             <div id="menu-list"></div>
         </div>
     </div>
 
     <script>
         let secilenKahveci = null;
+        let secilenKahveTuru = null;
 
         // Sayfa yüklendiğinde kahvecileri getir
         window.onload = function() {
@@ -407,55 +641,85 @@
         };
 
         function kahvecileriYukle() {
-            fetch('/kahveciler')
-                .then(response => response.json())
-                .then(kahveciler => {
-                    const grid = document.getElementById('kahveci-grid');
-                    grid.innerHTML = '';
-                    
-                    const kahveciLogolar = {
-                        'Starbucks': '🟢',
-                        'Mikel Coffee': '🔵'
-                    };
-                    
-                    const kahveciAciklamalar = {
-                        'Starbucks': 'Dünya çapında ünlü kahve zinciri, geniş içecek yelpazesi',
-                        'Mikel Coffee': 'Yunan kökenli kahveci, özel espresso karışımları'
-                    };
+            const kahveciler = [
+                {
+                    isim: 'Starbucks',
+                    logo: '🟢',
+                    aciklama: 'Dünya çapında ünlü kahve zinciri, geniş içecek yelpazesi',
+                    ozellik: 'Premium kahveler ve özel karışımlar'
+                },
+                {
+                    isim: 'Gloria Jeans',
+                    logo: '🟡',
+                    aciklama: 'Avustralya kökenli premium kahve markası',
+                    ozellik: 'Taze çekilmiş kahveler ve özel tarifler'
+                },
+                {
+                    isim: 'Mikel Coffee',
+                    logo: '🔵',
+                    aciklama: 'Yunan kökenli kahveci, özel espresso karışımları',
+                    ozellik: 'Geleneksel Yunan kahve kültürü'
+                },
+                {
+                    isim: 'Coffy',
+                    logo: '🟤',
+                    aciklama: 'Türk kahve zinciri, özel lezzet seçenekleri',
+                    ozellik: 'Türk kahvesi uzmanlığı'
+                },
+                {
+                    isim: 'Caribou Coffee',
+                    logo: '🟠',
+                    aciklama: 'Amerika kökenli kahve zinciri',
+                    ozellik: 'Soğuk kahve uzmanı'
+                },
+                {
+                    isim: 'Dunkin',
+                    logo: '🔴',
+                    aciklama: 'Hızlı servis ve pratik kahveler',
+                    ozellik: 'Kahvaltı kahveleri'
+                }
+            ];
+            
+            const grid = document.getElementById('kahveci-grid');
+            grid.innerHTML = '';
 
-                    kahveciler.forEach(kahveci => {
-                        const div = document.createElement('div');
-                        div.className = 'kahveci-item';
-                        div.onclick = () => kahveciSec(kahveci);
-                        
-                        div.innerHTML = `
-                            <input type="radio" name="kahveci" value="${kahveci}">
-                            <div class="kahveci-logo">${kahveciLogolar[kahveci] || '☕'}</div>
-                            <div class="kahveci-name">${kahveci}</div>
-                            <div class="kahveci-info">${kahveciAciklamalar[kahveci] || 'Lezzetli kahveler'}</div>
-                        `;
-                        
-                        grid.appendChild(div);
-                    });
-                })
-                .catch(error => {
-                    console.error('Kahveciler yüklenirken hata:', error);
-                    showError('Kahveciler yüklenirken hata oluştu!');
-                });
+            kahveciler.forEach(kahveci => {
+                const div = document.createElement('div');
+                div.className = 'kahveci-item';
+                div.onclick = () => kahveciSec(kahveci.isim, div);
+                
+                div.innerHTML = `
+                    <input type="radio" name="kahveci" value="${kahveci.isim}">
+                    <div class="kahveci-logo">${kahveci.logo}</div>
+                    <div class="kahveci-name">${kahveci.isim}</div>
+                    <div class="kahveci-info">${kahveci.aciklama}</div>
+                    <div style="margin-top: 10px; font-size: 0.8em; font-style: italic;">${kahveci.ozellik}</div>
+                `;
+                
+                grid.appendChild(div);
+            });
         }
 
-        function kahveciSec(kahveci) {
-            // Önceki seçimi temizle
+        function kahveciSec(kahveci, element) {
             document.querySelectorAll('.kahveci-item').forEach(item => {
                 item.classList.remove('selected');
             });
             
-            // Yeni seçimi işaretle
-            event.currentTarget.classList.add('selected');
+            element.classList.add('selected');
             secilenKahveci = kahveci;
             
-            // Menüyü gizle
             document.getElementById('menu-container').style.display = 'none';
+            document.getElementById('oneriler-container').classList.remove('show');
+        }
+
+        function toggleKahveTuru(turu) {
+            document.querySelectorAll('.kahve-turu-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            
+            const item = document.getElementById(turu).parentElement;
+            item.classList.add('selected');
+            secilenKahveTuru = turu;
         }
 
         function toggleTercih(tercih) {
@@ -470,139 +734,405 @@
             }
         }
 
-        function kahveOnerisiAl() {
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-            const tercihler = Array.from(checkboxes).map(cb => cb.value);
+        function toggleAlerjen(alerjen) {
+            const checkbox = document.getElementById(alerjen);
+            const item = checkbox.parentElement;
             
-            // Hata ve sonuç alanlarını temizle
+            checkbox.checked = !checkbox.checked;
+            if (checkbox.checked) {
+                item.classList.add('selected');
+            } else {
+                item.classList.remove('selected');
+            }
+        }
+
+        function kahveOnerisiAl() {
+            const tercihCheckboxes = document.querySelectorAll('.tercih-grid input[type="checkbox"]:checked');
+            const tercihler = Array.from(tercihCheckboxes).map(cb => cb.value);
+            
+            const alerjenCheckboxes = document.querySelectorAll('.alerjen-grid input[type="checkbox"]:checked');
+            const alerjenler = Array.from(alerjenCheckboxes).map(cb => cb.value);
+            
+            // Hata ve önceki sonuçları temizle
             document.getElementById('hata-mesaji').style.display = 'none';
-            document.getElementById('sonuc').classList.remove('show');
+            document.getElementById('oneriler-container').classList.remove('show');
             document.getElementById('menu-container').style.display = 'none';
             
             if (!secilenKahveci) {
-                showError('Lütfen bir kahveci seçin!');
+                showError('Lütfen bir kahveci seçin! ☕');
                 return;
             }
             
-            if (tercihler.length === 0) {
-                showError('Lütfen en az bir tercih seçin!');
+            if (!secilenKahveTuru) {
+                showError('Lütfen bir kahve türü seçin! ☕');
                 return;
             }
 
             // Yükleme animasyonu
-            document.querySelector('.loading').style.display = 'block';
-            document.querySelector('.btn').disabled = true;
+            const loadingDiv = document.querySelector('.loading');
+            const btnSpinner = document.querySelector('.loading-spinner');
+            const btn = document.querySelector('.btn');
+            
+            loadingDiv.style.display = 'block';
+            btnSpinner.style.display = 'inline-block';
+            btn.disabled = true;
 
-            fetch('/oneri', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    kahveci: secilenKahveci,
-                    tercihler: tercihler
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.querySelector('.loading').style.display = 'none';
-                document.querySelector('.btn').disabled = false;
+            // Demo için örnek öneriler - gerçek uygulamada Flask API'ye istek gönderilecek
+            setTimeout(() => {
+                loadingDiv.style.display = 'none';
+                btnSpinner.style.display = 'none';
+                btn.disabled = false;
                 
-                if (data.hata) {
-                    showError(data.hata);
-                } else {
-                    showSonuc(data);
+                const ornekOneriler = generateOneriler(secilenKahveci, secilenKahveTuru, tercihler, alerjenler);
+                showOneriler(ornekOneriler);
+            }, 2500);
+        }
+
+        function generateOneriler(kahveci, kahveTuru, tercihler, alerjenler) {
+            const oneriler = [];
+            
+            // Ana öneri
+            const anaOneri = {
+                sira: 1,
+                kahve_adi: getKahveAdi(kahveci, kahveTuru, tercihler),
+                fiyat: Math.floor(Math.random() * 25) + 15,
+                aciklama: `${tercihler.includes('tatli') ? 'Tatlı' : tercihler.includes('guclu') ? 'Güçlü' : 'Dengeli'} bir ${kahveTuru} deneyimi. Tercihlerinize göre özel olarak hazırlandı.`,
+                kategori: tercihler.includes('soguk') ? 'Soğuk İçecekler' : 'Sıcak İçecekler',
+                boyut_secenekleri: getBoyutSecenekleri(kahveci),
+                uyum_yuzdesi: 95,
+                ozellikler: getOzellikler(tercihler, alerjenler),
+                alerjen_uyari: getAlerjenUyari(alerjenler)
+            };
+            oneriler.push(anaOneri);
+            
+            // İkinci öneri
+            const ikinciOneri = {
+                sira: 2,
+                kahve_adi: getAlternatifKahve(kahveci, kahveTuru, tercihler),
+                fiyat: Math.floor(Math.random() * 20) + 12,
+                aciklama: `Alternatif seçenek olarak ${kahveTuru} bazlı bu içecek de size uygun olabilir.`,
+                kategori: tercihler.includes('sicak') ? 'Sıcak İçecekler' : 'Soğuk İçecekler',
+                boyut_secenekleri: getBoyutSecenekleri(kahveci),
+                uyum_yuzdesi: 88,
+                ozellikler: getOzellikler(tercihler, alerjenler, true),
+                alerjen_uyari: getAlerjenUyari(alerjenler)
+            };
+            oneriler.push(ikinciOneri);
+            
+            // Üçüncü öneri
+            const ucuncuOneri = {
+                sira: 3,
+                kahve_adi: getFarkliBirSecim(kahveci, tercihler),
+                fiyat: Math.floor(Math.random() * 18) + 10,
+                aciklama: `Farklı bir deneyim için önerilen bu seçenek de tercihlerinizle uyumlu.`,
+                kategori: 'Özel İçecekler',
+                boyut_secenekleri: getBoyutSecenekleri(kahveci),
+                uyum_yuzdesi: 82,
+                ozellikler: getOzellikler(tercihler, alerjenler, false, true),
+                alerjen_uyari: getAlerjenUyari(alerjenler)
+            };
+            oneriler.push(ucuncuOneri);
+            
+            return {
+                kahveci: kahveci,
+                kahve_turu: kahveTuru,
+                tercihler: tercihler,
+                alerjenler: alerjenler,
+                oneriler: oneriler
+            };
+        }
+
+        function getKahveAdi(kahveci, turu, tercihler) {
+            const kahveAdlari = {
+                'Starbucks': {
+                    'espresso': tercihler.includes('tatli') ? 'Caramel Macchiato' : 'Pike Place Roast',
+                    'latte': tercihler.includes('soguk') ? 'Iced Vanilla Latte' : 'Caffè Latte',
+                    'cappuccino': tercihler.includes('tatli') ? 'Cinnamon Dolce Cappuccino' : 'Cappuccino',
+                    'americano': tercihler.includes('soguk') ? 'Iced Americano' : 'Caffè Americano',
+                    'mocha': tercihler.includes('soguk') ? 'Iced White Chocolate Mocha' : 'Caffè Mocha',
+                    'filter': 'Pour Over Coffee'
+                },
+                'Gloria Jeans': {
+                    'espresso': 'Signature Espresso Blend',
+                    'latte': tercihler.includes('tatli') ? 'Vanilla Bean Latte' : 'Classic Latte',
+                    'cappuccino': 'Italian Cappuccino',
+                    'americano': 'Long Black',
+                    'mocha': 'Mudslide Mocha',
+                    'filter': 'Gloria Filter Coffee'
+                },
+                'Mikel Coffee': {
+                    'espresso': 'Greek Espresso',
+                    'latte': 'Freddo Cappuccino',
+                    'cappuccino': tercihler.includes('soguk') ? 'Freddo Cappuccino' : 'Hot Cappuccino',
+                    'americano': 'Filter Coffee',
+                    'mocha': 'Chocolate Freddo',
+                    'filter': 'Traditional Greek Coffee'
+                },
+                'Coffy': {
+                    'espresso': 'Türk Espresso',
+                    'latte': tercihler.includes('tatli') ? 'Karamelli Latte' : 'Klasik Latte',
+                    'cappuccino': 'İtalyan Cappuccino',
+                    'americano': 'Americano Special',
+                    'mocha': 'Çikolatalı Mocha',
+                    'filter': 'Türk Kahvesi'
+                },
+                'Caribou Coffee': {
+                    'espresso': 'Caribou Blend Espresso',
+                    'latte': tercihler.includes('soguk') ? 'Iced Latte' : 'Hot Latte',
+                    'cappuccino': 'Cappuccino',
+                    'americano': tercihler.includes('soguk') ? 'Cold Press' : 'Americano',
+                    'mocha': 'Turtle Mocha',
+                    'filter': 'Drip Coffee'
+                },
+                'Dunkin': {
+                    'espresso': 'Espresso',
+                    'latte': tercihler.includes('soguk') ? 'Iced Latte' : 'Hot Latte',
+                    'cappuccino': 'Cappuccino',
+                    'americano': tercihler.includes('soguk') ? 'Iced Coffee' : 'Hot Coffee',
+                    'mocha': 'Mocha Latte',
+                    'filter': 'Original Blend'
                 }
-            })
-            .catch(error => {
-                document.querySelector('.loading').style.display = 'none';
-                document.querySelector('.btn').disabled = false;
-                showError('Bir hata oluştu. Lütfen tekrar deneyin.');
-                console.error('Error:', error);
+            };
+            
+            return kahveAdlari[kahveci]?.[turu] || `${turu.charAt(0).toUpperCase() + turu.slice(1)} Special`;
+        }
+
+        function getAlternatifKahve(kahveci, turu, tercihler) {
+            const alternatifler = {
+                'espresso': tercihler.includes('tatli') ? 'Flavored Espresso' : 'Double Shot Espresso',
+                'latte': tercihler.includes('organik') ? 'Organic Latte' : 'Hazelnut Latte',
+                'cappuccino': tercihler.includes('kafeinsiz') ? 'Decaf Cappuccino' : 'Extra Foam Cappuccino',
+                'americano': tercihler.includes('guclu') ? 'Strong Americano' : 'Mild Americano',
+                'mocha': tercihler.includes('sut') ? 'Dairy-Free Mocha' : 'White Chocolate Mocha',
+                'filter': tercihler.includes('organik') ? 'Organic Filter Coffee' : 'House Blend'
+            };
+            
+            return alternatifler[turu] || `Alternative ${turu}`;
+        }
+
+        function getFarkliBirSecim(kahveci, tercihler) {
+            if (tercihler.includes('soguk')) {
+                return kahveci === 'Starbucks' ? 'Frappuccino' : 'Iced Specialty';
+            } else if (tercihler.includes('tatli')) {
+                return 'Seasonal Special';
+            } else if (tercihler.includes('organik')) {
+                return 'Organic House Special';
+            } else {
+                return 'Chef\'s Recommendation';
+            }
+        }
+
+        function getBoyutSecenekleri(kahveci) {
+            const boyutlar = {
+                'Starbucks': 'Tall (355ml), Grande (473ml), Venti (591ml)',
+                'Gloria Jeans': 'Regular (300ml), Large (450ml)',
+                'Mikel Coffee': 'Small (250ml), Medium (350ml), Large (450ml)',
+                'Coffy': 'Küçük (200ml), Orta (300ml), Büyük (400ml)',
+                'Caribou Coffee': 'Small (355ml), Medium (473ml), Large (591ml)',
+                'Dunkin': 'Small (295ml), Medium (414ml), Large (591ml)'
+            };
+            
+            return boyutlar[kahveci] || 'Küçük, Orta, Büyük';
+        }
+
+        function getOzellikler(tercihler, alerjenler, alternatif = false, ozel = false) {
+            const ozellikler = [];
+            
+            if (tercihler.includes('organik')) ozellikler.push('Organik sertifikalı');
+            if (tercihler.includes('kafeinsiz')) ozellikler.push('Kafeinsiz seçenek');
+            if (tercihler.includes('guclu')) ozellikler.push('Yoğun kafein');
+            if (tercihler.includes('hafif')) ozellikler.push('Hafif ve yumuşak');
+            if (tercihler.includes('tatli')) ozellikler.push('Doğal tatlandırıcı');
+            if (tercihler.includes('sade')) ozellikler.push('Katkısız doğal');
+            
+            if (alerjenler.includes('sut')) ozellikler.push('Laktozsuz alternatif mevcut');
+            if (alerjenler.includes('gluten')) ozellikler.push('Glutensiz');
+            if (alerjenler.includes('findik')) ozellikler.push('Fındık içermez');
+            
+            if (alternatif) ozellikler.push('Alternatif tarif');
+            if (ozel) ozellikler.push('Sezonluk özel');
+            
+            return ozellikler.slice(0, 4); // En fazla 4 özellik göster
+        }
+
+        function getAlerjenUyari(alerjenler) {
+            if (alerjenler.length === 0) return null;
+            
+            const uyarilar = {
+                'sut': 'Süt ürünleri içerebilir - Alternatif süt seçenekleri mevcut',
+                'gluten': 'Gluten içermez - Çapraz kontaminasyon riski düşük',
+                'findik': 'Fındık ve kuruyemiş içermez',
+                'soya': 'Soya içermez - Alternatif süt seçenekleri',
+                'yumurta': 'Yumurta içermez'
+            };
+            
+            return alerjenler.map(a => uyarilar[a]).filter(Boolean).join(', ');
+        }
+
+        function showOneriler(data) {
+            const container = document.getElementById('oneriler-container');
+            const grid = document.getElementById('oneriler-grid');
+            
+            grid.innerHTML = '';
+            
+            data.oneriler.forEach(oneri => {
+                const card = document.createElement('div');
+                card.className = 'oneri-card';
+                
+                const uyumRenk = oneri.uyum_yuzdesi >= 90 ? '#4CAF50' : 
+                                oneri.uyum_yuzdesi >= 80 ? '#FF9800' : '#FF5722';
+                
+                card.innerHTML = `
+                    <div class="oneri-rank">${oneri.sira}</div>
+                    <div class="uyum-badge" style="background: ${uyumRenk}">
+                        %${oneri.uyum_yuzdesi} Uyumlu
+                    </div>
+                    <div class="kahve-header">
+                        <div class="kahve-isim">${oneri.kahve_adi}</div>
+                        <div class="kahve-fiyat">${oneri.fiyat} ₺</div>
+                    </div>
+                    <div class="kahve-aciklama">${oneri.aciklama}</div>
+                    ${oneri.alerjen_uyari ? `<div style="background: #FFF3CD; color: #856404; padding: 8px; border-radius: 5px; margin: 10px 0; font-size: 0.9em;"><strong>⚠️ Alerjen Bilgisi:</strong> ${oneri.alerjen_uyari}</div>` : ''}
+                    <div class="kahve-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Kategori</div>
+                            <div class="detail-value">${oneri.kategori}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Boyut Seçenekleri</div>
+                            <div class="detail-value">${oneri.boyut_secenekleri}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Özellikler</div>
+                            <div class="detail-value">${oneri.ozellikler.join(', ') || 'Standart'}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Kahveci</div>
+                            <div class="detail-value">${data.kahveci}</div>
+                        </div>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
             });
+            
+            container.classList.add('show');
         }
 
         function menuGoster() {
             if (!secilenKahveci) {
-                showError('Lütfen önce bir kahveci seçin!');
+                showError('Lütfen önce bir kahveci seçin! ☕');
                 return;
             }
 
             const menuContainer = document.getElementById('menu-container');
             const menuList = document.getElementById('menu-list');
+            const kahveciAdi = document.getElementById('menu-kahveci-adi');
             
-            // Yükleme animasyonu
+            kahveciAdi.textContent = secilenKahveci;
             menuList.innerHTML = '<p>Menü yükleniyor...</p>';
             menuContainer.style.display = 'block';
 
-            fetch(`/menu/${secilenKahveci}`)
-                .then(response => response.json())
-                .then(menu => {
-                    menuList.innerHTML = '';
+            // Demo için örnek menü
+            setTimeout(() => {
+                const ornekMenu = generateMenu(secilenKahveci);
+                
+                menuList.innerHTML = '';
+                
+                ornekMenu.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'menu-item';
                     
-                    if (menu.length === 0) {
-                        menuList.innerHTML = '<p>Menü bulunamadı.</p>';
-                        return;
-                    }
-
-                    menu.forEach(item => {
-                        const div = document.createElement('div');
-                        div.className = 'menu-item';
-                        
-                        div.innerHTML = `
-                            <div class="menu-item-name">${item.kahve_adi}</div>
-                            <div class="menu-item-price">${item.fiyat} ₺</div>
-                            <div class="menu-item-desc">${item.aciklama}</div>
-                            <div style="clear: both; margin-top: 10px;">
-                                <small><strong>Kategori:</strong> ${item.kategori}</small><br>
-                                <small><strong>Boyutlar:</strong> ${item.boyut_secenekleri}</small>
-                            </div>
-                        `;
-                        
-                        menuList.appendChild(div);
-                    });
-                })
-                .catch(error => {
-                    menuList.innerHTML = '<p>Menü yüklenirken hata oluştu.</p>';
-                    console.error('Menu error:', error);
+                    div.innerHTML = `
+                        <div class="menu-item-name">${item.kahve_adi}</div>
+                        <div class="menu-item-price">${item.fiyat} ₺</div>
+                        <div class="menu-item-desc">${item.aciklama}</div>
+                        <div style="clear: both; margin-top: 10px;">
+                            <small><strong>Kategori:</strong> ${item.kategori}</small><br>
+                            <small><strong>Boyutlar:</strong> ${item.boyut_secenekleri}</small>
+                            ${item.alerjen_bilgisi ? `<br><small><strong>⚠️ Alerjen:</strong> ${item.alerjen_bilgisi}</small>` : ''}
+                        </div>
+                    `;
+                    
+                    menuList.appendChild(div);
                 });
+            }, 1000);
+        }
+
+        function generateMenu(kahveci) {
+            const menuSablonlari = {
+                'Starbucks': [
+                    { kahve_adi: 'Americano', fiyat: 14, aciklama: 'Klasik espresso ve sıcak su karışımı', kategori: 'Sıcak İçecekler', boyut_secenekleri: 'Tall, Grande, Venti', alerjen_bilgisi: null },
+                    { kahve_adi: 'Latte', fiyat: 18, aciklama: 'Espresso ve buharda ısıtılmış süt', kategori: 'Sıcak İçecekler', boyut_secenekleri: 'Tall, Grande, Venti', alerjen_bilgisi: 'Süt içerir' },
+                    { kahve_adi: 'Cappuccino', fiyat: 16, aciklama: 'Espresso, sıcak süt ve süt köpüğü', kategori: 'Sıcak İçecekler', boyut_secenekleri: 'Tall, Grande', alerjen_bilgisi: 'Süt içerir' },
+                    { kahve_adi: 'Caramel Macchiato', fiyat: 22, aciklama: 'Vanilya aromalı süt, espresso ve karamel sos', kategori: 'Tatlı İçecekler', boyut_secenekleri: 'Tall, Grande, Venti', alerjen_bilgisi: 'Süt içerir' },
+                    { kahve_adi: 'Frappuccino', fiyat: 24, aciklama: 'Buzlu kahve karışımı', kategori: 'Soğuk İçecekler', boyut_secenekleri: 'Tall, Grande, Venti', alerjen_bilgisi: 'Süt içerir' },
+                    { kahve_adi: 'Pike Place Roast', fiyat: 12, aciklama: 'Orta kavrulmuş filtre kahve', kategori: 'Filtre Kahveler', boyut_secenekleri: 'Tall, Grande', alerjen_bilgisi: null }
+                ],
+                'Gloria Jeans': [
+                    { kahve_adi: 'Long Black', fiyat: 13, aciklama: 'Güçlü siyah kahve', kategori: 'Sıcak İçecekler', boyut_secenekleri: 'Regular, Large', alerjen_bilgisi: null },
+                    { kahve_adi: 'Flat White', fiyat: 17, aciklama: 'Mikroköpük süt ile espresso', kategori: 'Sıcak İçecekler', boyut_secenekleri: 'Regular, Large', alerjen_bilgisi: 'Süt içerir' },
+                    { kahve_adi: 'Mudslide Mocha', fiyat: 21, aciklama: 'Çikolata ve karamel karışımı', kategori: 'Tatlı İçecekler', boyut_secenekleri: 'Regular, Large', alerjen_bilgisi: 'Süt, kakao içerir' },
+                    { kahve_adi: 'Iced Coffee', fiyat: 15, aciklama: 'Soğuk filtre kahve', kategori: 'Soğuk İçecekler', boyut_secenekleri: 'Regular, Large', alerjen_bilgisi: null },
+                    { kahve_adi: 'Chai Latte', fiyat: 19, aciklama: 'Baharatlı çay latte', kategori: 'Özel İçecekler', boyut_secenekleri: 'Regular, Large', alerjen_bilgisi: 'Süt içerir' }
+                ]
+            };
+            
+            // Diğer kahveciler için varsayılan menü
+            const varsayilanMenu = [
+                { kahve_adi: 'Espresso', fiyat: 8, aciklama: 'Yoğun ve güçlü kahve', kategori: 'Sıcak İçecekler', boyut_secenekleri: 'Single, Double', alerjen_bilgisi: null },
+                { kahve_adi: 'Americano', fiyat: 12, aciklama: 'Espresso ve sıcak su', kategori: 'Sıcak İçecekler', boyut_secenekleri: 'Küçük, Orta, Büyük', alerjen_bilgisi: null },
+                { kahve_adi: 'Latte', fiyat: 16, aciklama: 'Espresso ve süt', kategori: 'Sıcak İçecekler', boyut_secenekleri: 'Küçük, Orta, Büyük', alerjen_bilgisi: 'Süt içerir' },
+                { kahve_adi: 'Cappuccino', fiyat: 14, aciklama: 'Espresso, süt ve köpük', kategori: 'Sıcak İçecekler', boyut_secenekleri: 'Küçük, Orta', alerjen_bilgisi: 'Süt içerir' },
+                { kahve_adi: 'Mocha', fiyat: 18, aciklama: 'Çikolatalı kahve', kategori: 'Tatlı İçecekler', boyut_secenekleri: 'Küçük, Orta, Büyük', alerjen_bilgisi: 'Süt, kakao içerir' },
+                { kahve_adi: 'Iced Coffee', fiyat: 13, aciklama: 'Soğuk kahve', kategori: 'Soğuk İçecekler', boyut_secenekleri: 'Orta, Büyük', alerjen_bilgisi: null }
+            ];
+            
+            return menuSablonlari[kahveci] || varsayilanMenu;
+        }
+
+        function formuSifirla() {
+            // Kahveci seçimini sıfırla
+            document.querySelectorAll('.kahveci-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            secilenKahveci = null;
+            
+            // Kahve türü seçimini sıfırla
+            document.querySelectorAll('.kahve-turu-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            secilenKahveTuru = null;
+            
+            // Tercihleri sıfırla
+            document.querySelectorAll('.tercih-item').forEach(item => {
+                item.classList.remove('selected');
+                const checkbox = item.querySelector('input[type="checkbox"]');
+                if (checkbox) checkbox.checked = false;
+            });
+            
+            // Alerjenleri sıfırla
+            document.querySelectorAll('.alerjen-item').forEach(item => {
+                item.classList.remove('selected');
+                const checkbox = item.querySelector('input[type="checkbox"]');
+                if (checkbox) checkbox.checked = false;
+            });
+            
+            // Sonuçları gizle
+            document.getElementById('oneriler-container').classList.remove('show');
+            document.getElementById('menu-container').style.display = 'none';
+            document.getElementById('hata-mesaji').style.display = 'none';
         }
 
         function showError(mesaj) {
             const hataDiv = document.getElementById('hata-mesaji');
             hataDiv.textContent = mesaj;
             hataDiv.style.display = 'block';
-        }
-
-        function showSonuc(data) {
-            const oneri = data.oneri;
             
-            document.getElementById('kahve-isim').textContent = oneri.kahve_adi;
-            document.getElementById('kahve-fiyat').textContent = oneri.fiyat + ' ₺';
-            document.getElementById('kahve-aciklama').textContent = oneri.aciklama;
-            
-            // Detayları göster
-            const detailsContainer = document.getElementById('kahve-details');
-            detailsContainer.innerHTML = `
-                <div class="detail-item">
-                    <div class="detail-label">Kahveci</div>
-                    <div class="detail-value">${data.kahveci}</div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">Kategori</div>
-                    <div class="detail-value">${oneri.kategori}</div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">Boyut Seçenekleri</div>
-                    <div class="detail-value">${oneri.boyut_secenekleri}</div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">Seçimleriniz</div>
-                    <div class="detail-value">${data.tercihler.join(', ')}</div>
-                </div>
-            `;
-            
-            document.getElementById('sonuc').classList.add('show');
+            // 5 saniye sonra otomatik gizle
+            setTimeout(() => {
+                hataDiv.style.display = 'none';
+            }, 5000);
         }
     </script>
 </body>
